@@ -11,6 +11,8 @@ class _SettingsPageState extends State<SettingsPage> {
   bool pushNotifications = true;
   bool locationServices = true;
 
+  String selectedLanguage = "English";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +29,8 @@ class _SettingsPageState extends State<SettingsPage> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // Push Notifications
+
+          // ================= NOTIFICATIONS =================
           SwitchListTile(
             title: const Text("Push Notifications"),
             secondary: const Icon(Icons.notifications),
@@ -40,7 +43,46 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           const SizedBox(height: 20),
 
-          // Privacy Section Label
+          // ================= LANGUAGE =================
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              "LANGUAGE",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.grey,
+                letterSpacing: 1.2,
+              ),
+            ),
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.language),
+            title: const Text("App Language"),
+            trailing: DropdownButton<String>(
+              value: selectedLanguage,
+              underline: const SizedBox(),
+              items: const [
+                DropdownMenuItem(
+                  value: "English",
+                  child: Text("English"),
+                ),
+                DropdownMenuItem(
+                  value: "Urdu",
+                  child: Text("Urdu"),
+                ),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  selectedLanguage = value!;
+                });
+              },
+            ),
+          ),
+
+          const SizedBox(height: 20),
+
+          // ================= PRIVACY =================
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
@@ -53,7 +95,6 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
 
-          // Location Services
           SwitchListTile(
             title: const Text("Location Services"),
             secondary: const Icon(Icons.location_on),
@@ -66,7 +107,7 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           const SizedBox(height: 20),
 
-          // Data Section Label
+          // ================= DATA =================
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
@@ -79,7 +120,6 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
 
-          // Clear Cached Data
           ListTile(
             leading: const Icon(Icons.delete_outline),
             title: const Text("Clear Cached Data"),
@@ -90,7 +130,7 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           const SizedBox(height: 20),
 
-          // Account Section Label
+          // ================= ACCOUNT =================
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
@@ -103,7 +143,6 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
 
-          // Delete Account
           ListTile(
             leading: const Icon(Icons.person_off, color: Colors.red),
             title: const Text(
@@ -118,7 +157,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
           const SizedBox(height: 40),
 
-          // App Version
+          // ================= VERSION =================
           const Center(
             child: Text(
               "Community Services v1.0.0",

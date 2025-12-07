@@ -23,11 +23,16 @@ class _LogIn extends State<LogIn> {
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 10,
           children: [
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ), // Will be Replaced by image
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: Image.asset(
+                'assets/images/logo.jpg',
+                width: 100,
+                height: 100,
+                fit: BoxFit.contain,
+              ),
+            ),
+
             Text('Community Services', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26,),),
             Text('Connect, Share, and Serve Together',style: TextStyle(color: Colors.grey),),
             SizedBox(
@@ -52,9 +57,9 @@ class _LogIn extends State<LogIn> {
                     backgroundColor: Colors.blueAccent.shade700,
                   ),
                   child: Text('Log In',style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600
                   ),)),
             )
           ],

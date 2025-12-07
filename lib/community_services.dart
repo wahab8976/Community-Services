@@ -19,7 +19,7 @@ class _CommunityServicesState extends State<CommunityServices> {
   final List<Widget> screens = const [
     HomePage(),
     Events(),
-    MyActivities(),
+    MyActivityScreen(),
     UserProfile(),
   ];
 
