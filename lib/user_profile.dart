@@ -20,16 +20,6 @@ class UserProfile extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Profile',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
-                    Icon(Icons.settings,)
-                  ],
-                ),
-              ),
-              Padding(
                 padding: const EdgeInsets.only(
                   top: 45,
                 ),
@@ -39,6 +29,28 @@ class UserProfile extends StatelessWidget {
               ),Text('UserName',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
               Text('userEmail@gmail.com',style: TextStyle(fontSize: 15,color: Colors.grey),),
               SizedBox(height: 50,),
+
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10.0,bottom: 10),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade300,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Text(
+                      "Individual",
+                      style: TextStyle(
+                        color: Colors.blue.shade700,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 3,

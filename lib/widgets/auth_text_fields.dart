@@ -6,6 +6,7 @@ class AuthTextField extends StatelessWidget {
   final IconData? prefixIcon_passed;
   final bool obscureText_passed;
   final TextEditingController? controller_passed;
+  final TextInputType? keyboard_type_passed;
 
   const AuthTextField({
     super.key,
@@ -14,6 +15,7 @@ class AuthTextField extends StatelessWidget {
     this.prefixIcon_passed,
     this.obscureText_passed = false,
     this.controller_passed,
+    this.keyboard_type_passed,
   });
 
   @override
@@ -33,6 +35,7 @@ class AuthTextField extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           TextField(
+            keyboardType: keyboard_type_passed,
             controller: controller_passed,
             obscureText: obscureText_passed,
             decoration: InputDecoration(

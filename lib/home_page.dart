@@ -1,4 +1,4 @@
-import 'package:community_services/widgets/services_type_card.dart';
+import 'package:community_services/widgets/services_type_chip.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -55,13 +55,13 @@ class HomePage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: const [
-                  ServicesTypeCard(cardName: 'Education', icon: Icons.school_outlined),
+                  ServicesTypeChip(chipName: 'Education', icon: Icons.school_outlined),
                   SizedBox(width: 10),
-                  ServicesTypeCard(cardName: 'Health', icon: Icons.heart_broken_outlined),
+                  ServicesTypeChip(chipName: 'Health', icon: Icons.heart_broken_outlined),
                   SizedBox(width: 10),
-                  ServicesTypeCard(cardName: 'Entertainment', icon: Icons.light_mode_outlined),
+                  ServicesTypeChip(chipName: 'Entertainment', icon: Icons.light_mode_outlined),
                   SizedBox(width: 10),
-                  ServicesTypeCard(cardName: 'Security', icon: Icons.security_outlined),
+                  ServicesTypeChip(chipName: 'Security', icon: Icons.security_outlined),
                 ],
               ),
             ),

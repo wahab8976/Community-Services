@@ -1,15 +1,16 @@
+import 'package:community_services/community_services.dart';
 import 'package:community_services/sign_up.dart';
 import 'package:community_services/widgets/auth_text_fields.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class LogIn extends StatefulWidget {
+  const LogIn({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<LogIn> createState() => _LogIn();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LogIn extends State<LogIn> {
   @override
 
   var email_controller = TextEditingController();
@@ -35,8 +36,8 @@ class _HomePageState extends State<HomePage> {
                 spacing: 15,
                 crossAxisAlignment: CrossAxisAlignment.start, // Align label to left
                 children: [
-                  AuthTextField(label_passed: 'Email', hint_passed: 'Enter your Email',prefixIcon_passed: Icons.email_outlined,controller_passed: email_controller,),
-                  AuthTextField(label_passed: 'Password', hint_passed: 'Enter your Password' , prefixIcon_passed: Icons.lock_outline,controller_passed: password_controller,)
+                  AuthTextField(label_passed: 'Email', hint_passed: 'Enter your Email',prefixIcon_passed: Icons.email_outlined,controller_passed: email_controller,keyboard_type_passed: TextInputType.emailAddress,),
+                  AuthTextField(label_passed: 'Password', hint_passed: 'Enter your Password' , prefixIcon_passed: Icons.lock_outline,controller_passed: password_controller,keyboard_type_passed: TextInputType.text,)
                 ],
               ),
             ),
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
               height: 50,
               child: ElevatedButton(onPressed: (){
                 print('Email is ${email_controller.text} and pass is ${password_controller.text}');
-
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CommunityServices(),));
               },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueAccent.shade700,
