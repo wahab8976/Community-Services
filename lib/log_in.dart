@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             Text('Community Services', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26,),),
             Text('Connect, Share, and Serve Together',style: TextStyle(color: Colors.grey),),
             SizedBox(
-              width: 300,
+              width: 350,
               child: Column(
                 spacing: 15,
                 crossAxisAlignment: CrossAxisAlignment.start, // Align label to left

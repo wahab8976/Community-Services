@@ -14,9 +14,11 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   @override
 
+  var cnic_controller = TextEditingController();
   var name_controller = TextEditingController();
   var email_controller = TextEditingController();
   var password_controller = TextEditingController();
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +28,6 @@ class _SignUpState extends State<SignUp> {
       ),
       body: Center(
         child: Column(
-          spacing: 10,
-          // Main Column
           children: [
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -44,8 +44,12 @@ class _SignUpState extends State<SignUp> {
             SizedBox(
               height: 50,
             ),
+
+            AuthTextField(label_passed: 'CNIC', hint_passed: 'Enter your CNIC', prefixIcon_passed: Icons.credit_card, controller_passed: cnic_controller,),
             AuthTextField(label_passed: 'Full Name', hint_passed: 'Enter your Name', prefixIcon_passed: Icons.person_2_outlined, controller_passed: name_controller,),
            AuthTextField(label_passed: 'Email', hint_passed: 'Enter your Email ',prefixIcon_passed: Icons.email_outlined,controller_passed: email_controller,),
+            AuthTextField(label_passed: 'Phone Number', hint_passed: 'Enter phone number', prefixIcon_passed: Icons.phone_android, controller_passed: name_controller,),
+            AuthTextField(label_passed: 'Address', hint_passed: 'Enter your Address', prefixIcon_passed: Icons.location_on_outlined, controller_passed: name_controller,),
             AuthTextField(label_passed: 'Password', hint_passed: 'Create a Password',prefixIcon_passed: Icons.lock_outline,controller_passed: password_controller,),
             SizedBox(
               width: 300,
