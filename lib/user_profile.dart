@@ -1,4 +1,5 @@
 import 'package:community_services/edit_profile.dart';
+import 'package:community_services/widgets/user_profile_navigation_btn.dart';
 import 'package:community_services/widgets/user_progress_card.dart';
 import 'package:flutter/material.dart';
 
@@ -61,50 +62,45 @@ class UserProfile extends StatelessWidget {
                 ],
               ),
               SizedBox(
+                height: 70,
                 width: screenWidth * 95,
-                height: 60,
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: InkWell(
                     onTap: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => EditProfile(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfile(),));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Edit Profile',style: TextStyle(fontSize: 17),),
-                        Icon(Icons.navigate_next)
+                        UserProfileNavigationBtn(title_passed:'Edit Profile',color_passed: Colors.grey.shade900,icon_passed: Icons.edit,),
+                        Icon(Icons.navigate_next),
                       ],
                     ),
                   ),
                 ),
               ),SizedBox(
-                height: 60,
+                height: 70,
                 width: screenWidth * 95,
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Settings',style: TextStyle(fontSize: 17)),
-                      Icon(Icons.navigate_next)
-                    ],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        UserProfileNavigationBtn(title_passed:'Settings',color_passed: Colors.grey.shade900,icon_passed: Icons.settings,),
+                        Icon(Icons.navigate_next),
+                      ],
+                    ),
                   ),
                 ),
-              ),SizedBox(
-                height: 60,
+              SizedBox(
+                height: 70,
                 width: screenWidth * 95,
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Log Out',style: TextStyle(fontSize: 17)),
-                      Icon(Icons.navigate_next),
-                    ],
+                    child: UserProfileNavigationBtn(title_passed:'Log Out',color_passed: Colors.red,icon_passed: Icons.logout,),
                   ),
                 ),
-              )
             ],
             
             
